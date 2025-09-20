@@ -1,38 +1,69 @@
-# Business Landing Page
+# React + TypeScript + Vite
 
-## Description
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-This is a simple business landing page built as part of my learning journey in The Odin Project (JavaScript course). It showcases basic HTML and CSS skills, with an emphasis on clean design and user experience. This landing page is designed for a business consulting service and includes sections like "Services," "About," "Testimonials," and a "Contact" form.
+Currently, two official plugins are available:
 
-## Features
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-- Header with navigation links
-- Hero section with a call-to-action
-- Services section with a brief description
-- Testimonials section showcasing client feedback
-- Footer with contact information
+## Expanding the ESLint configuration
 
-## Technologies Used
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-- HTML
-- CSS
-- JavaScript (for interactive features)
-- Webpack (for bundling assets)
-- MiniCssExtractPlugin (for CSS extraction)
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-## Future Updates
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-This project will be updated to include:
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
 
-- Responsive design for mobile and tablet devices
-- Enhanced styling and layout adjustments
-- Integration with backend services (e.g., contact forms, service bookings)
-- Potential for additional sections, like a blog or customer testimonials carousel
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-## How to Run
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/Eagle-lucid/business-consulting-service.git
-   ```
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
