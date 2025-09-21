@@ -1,0 +1,39 @@
+/* src/styles/globals.css */
+@import "tailwindcss";
+
+/* Import Fontsource fonts */
+@import '@fontsource/inter/300.css'; /* Light*/
+@import '@fontsource/inter/400.css'; /* Regular */
+@import '@fontsource/inter/500.css'; /* Medium */
+@import '@fontsource/inter/600.css'; /* SemiBold */
+@import '@fontsource/inter/700.css'; /* Bold */
+
+@import '@fontsource/playfair-display/400.css'; /* Regular */
+@import '@fontsource/playfair-display/500.css'; /* Medium */
+@import '@fontsource/playfair-display/600.css'; /* SemiBold */
+@import '@fontsource/playfair-display/700.css'; /* Bold */
+
+@import '@fontsource/fira-code/400.css'; /* Regular */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: sans-serif;
+    antialiased: true;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background-color: hsl(0 0% 100% / 0.7);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(0 0% 100% / 0.2);
+  }
+  .transition-smooth {
+    transition: all 0.3s ease-in-out;
+  }
+}
