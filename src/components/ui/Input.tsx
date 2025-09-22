@@ -22,7 +22,7 @@ interface InputProps {
 const Input: React.FC<InputProps> = ({
     label,
     type = 'text',
-    placeholder = '',
+    placeholder,
     className = '',
     disabled = false,
     error,
