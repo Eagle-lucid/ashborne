@@ -1,4 +1,5 @@
 /* src/styles/globals.css */
+@import "./theme.css";
 @import "tailwindcss";
 
 /* Import Fontsource fonts */
@@ -22,16 +23,44 @@
 
   body {
     font-family: sans-serif;
-    antialiased: true;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: hsl(210, 30%, 8%);
+    color: hsl(210, 30%, 90%);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    color: hsl(210, 30%, 95%);
+    margin-bottom: 0.5rem;
+  }
+
+  h1 { margin-bottom: 1rem; font-size: 2.5rem; }
+  h2 { font-size: 2rem;  margin-bottom: 0.75rem; }
+  h3, h4, h5, h6 { font-size: 1.5rem; margin-bottom: 0.5rem;}
+
+  p, span, a, li, div {
+    margin-bottom: 1rem;
+  }
+
+  a {
+    @apply transition-smooth text-primary hover:text-primary-dark;
+    text-decoration: none;
+  }
+  a:focus-visible {
+    outline: 2px solid hsl(45, 100%, 50%);
+    outline-offset: 2px;
   }
 }
 
 @layer utilities {
   .glass {
     background-color: hsl(0 0% 100% / 0.7);
-    -webkit-backdrop-filter: blur(12px);
-    backdrop-filter: blur(12px);
-    border: 1px solid hsl(0 0% 100% / 0.2);
+    -webkit-backdrop-filter: blur(14px) saturate(180%);
+    backdrop-filter: blur(14px) saturate(180%);
+    border: 1px solid hsl(0 0% 100% / 0.25);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 30px hsl(0 0% 0% / 0.5);
   }
   .transition-smooth {
     transition: all 0.3s ease-in-out;

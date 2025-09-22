@@ -1,0 +1,56 @@
+/* Ashborne Design Tokens - Theme.css */
+
+:root {
+    /* Brand Palette */
+    --brand-primary: hsl(0, 0%, 100%); /* White */
+    --brand-secondary: hsl(0, 0%, 95%); /* Soft Gray */
+    --brand-accent: hsl(145, 63%, 42%); /* Emerald Growth */
+    --brand-accent-dark: hsl(145, 63%, 32%); /* Darker Emerald */
+    --brand-dark: hsl(0, 0%, 12%); /* Charcoal Black */
+    --brand-gold: hsl(45, 85%, 55%); /* Gold  Clarity*/
+
+    /* Typography */
+    --font-sans: 'Inter', sans-serif;
+    --font-headings: 'Playfair Display', serif;
+    --font-mono: 'Fira Code', monospace;
+
+    /* Radius */
+    --radius-xl: 1.25rem;
+    --radius-2xl: 1.5rem;
+    --radius-3xl: 2rem;
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px hsl(0 0% 0% / 0.1);
+    --shadow-strong: 0 8px 30px hsl(0 0% 0% / 0.2);
+    --shadow-inset: inset 0 2px 4px hsl(0 0% 0% / 0.1);
+    --shadow-glow: 0 0 10px hsl(145, 63%, 42% / 0.7);
+
+    /* Gradients */
+    --gradient-ashborne: linear-gradient(
+        135deg,
+        var(--brand-accent) 0%,
+        var(--brand-gold) 100%
+    );
+}
+
+/* Dark Mode Setup  */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --brand-primary: hsl(0, 0%, 12%); /* Light Gray */
+        --brand-secondary: hsl(0, 0%, 20%); /* Medium Gray */
+        --brand-accent: hsl(145, 63%, 42%); /* Emerald Growth */
+        --brand-accent-dark: hsl(145, 63%, 32%); /* Darker Emerald */
+        --brand-dark: hsl(210, 30%, 98%); /* Dark Charcoal */
+        --brand-gold: hsl(45, 85%, 65%); /* Gold Clarity */
+
+        --shadow-soft: 0 4px 20px hsl(0 0% 0% / 0.3);
+        --shadow-strong: 0 8px 30px hsl(0 0% 0% / 0.5);
+        --shadow-inset: inset 0 2px 4px hsl(0 0% 0% / 0.2);
+        --shadow-glow: 0 0 10px hsl(145, 63%, 42% / 0.9);
+    }
+    
+    html, body {
+        transition: all 0.3s ease-in-out;
+    }
+}
+    

@@ -7,13 +7,17 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    // Custom Colors
+    extend: {
+      // Custom Colors
       colors: {
-        primary: "hsl(0, 0%, 100%)",   // Base White
-        secondary: "hsl(0, 0%, 95%)", // Soft Gray
-        accent: "hsl(145, 63%, 42%)", // Emerald Growth
-        dark: "hsl(0, 0%, 12%)",      // Charcoal Black
-        gold: "hsl(43, 85%, 55%)",    // Gold Clarity
+        brand: {
+          primary: "var(--brand-primary)",   // White
+          secondary: "var(--brand-secondary)", // Soft Gray
+          accent: "var(--brand-accent)", // Emerald Growth
+          'accent-dark': "var(--brand-accent-dark)", // Emerald Growth Dark
+          dark: "var(--brand-dark)",      // Charcoal Black
+          gold: "var(--brand-gold)",    // Gold Clarity
+        },
       },
 
       // Fonts
@@ -41,14 +45,23 @@ export default {
 
       // Shadows & Radius
       boxShadow: {
-        soft: "0 4px 20px rgba(0, 0, 0, 0.1)",
-        strong: "0 8px 30px rgba(0, 0, 0, 0.2)",
+        soft: "var(--shadow-soft)",
+        strong: "var(--shadow-strong)",
+        inset: "var(--shadow-inset)",
+        glow: "var(--shadow-glow)",
       },
       borderRadius: {
-        xl: "1.25rem",
-        "2xl": "1.5rem",
+        xl: "var(--radius-xl)",
+        "2xl": "var(--radius-2xl)",
+        "3xl": "var(--radius-3xl)",
       },
+
+      // Background Gradients
+      backgroundImage: {
+        "gradient-ashborne":
+          "linear-gradient(135deg, hsl(145, 63%, 42%) 0%, hsl(43, 85%, 55%) 100%)",
+      },
+    },
   },
+  plugins: [],
 } satisfies Config;
-
-
