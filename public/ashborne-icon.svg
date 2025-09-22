@@ -1,0 +1,14 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Eagle silhouette with upward growth movement -->
+  <path d="M32 8C24 8, 16 16, 16 32C16 48, 24 56, 32 56C40 56, 48 48, 48 32C48 16, 40 8, 32 8Z" fill="hsl(145, 63%, 42%)"/>
+  
+  <!-- Eagle head details -->
+  <path d="M24 24C26 20, 30 18, 32 18C34 18, 38 20, 40 24" stroke="hsl(0, 0%, 100%)" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <!-- Upward growth arrow/trend line -->
+  <path d="M24 40L32 32L40 40" stroke="hsl(0, 0%, 100%)" stroke-width="2" stroke-linecap="round"/>
+  <path d="M32 32L32 24" stroke="hsl(0, 0%, 100%)" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Strategic focus point -->
+  <circle cx="32" cy="28" r="1.5" fill="hsl(0, 0%, 100%)"/>
+</svg>
