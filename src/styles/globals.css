@@ -1,6 +1,10 @@
 /* src/styles/globals.css */
 @import "./theme.css";
-@import "tailwindcss";
+
+/* Tailwind Layers */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* Import Fontsource fonts */
 @import '@fontsource/inter/300.css'; /* Light*/
