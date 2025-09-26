@@ -1,6 +1,6 @@
 // src/components/layout/Header.tsx
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Menu } from 'lucide-react';
 
 // Hooks 
@@ -88,8 +88,9 @@ export const  Header = () => {
                           </ul>
 
                           <Button onClick={() => handleScrollTo(CTA.href)}
-                              variant='primary'
-                              >
+                            variant='primary'
+                            type='button'
+                            >
                                  {CTA.label}
                           </Button>
                       </nav>
