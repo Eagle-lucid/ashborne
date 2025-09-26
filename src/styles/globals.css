@@ -1,4 +1,5 @@
 /* src/styles/globals.css */
+@import "tailwindcss";
 @import "./theme.css";
 /* Import Fontsource fonts */
 @import '@fontsource/inter/300.css'; /* Light*/
@@ -13,11 +14,6 @@
 @import '@fontsource/playfair-display/700.css'; /* Bold */
 
 @import '@fontsource/fira-code/400.css'; /* Regular */
-
-/* Tailwind Layers */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @layer utilities {
   .glass {
@@ -63,11 +59,19 @@
 
 @layer components {
   a {
-    @apply transition-all duration-300 ease-in-out text-primary hover:text-primary-dark;
+    color: var(--brand-accent);
+    transition: all 0.3s ease-in-out;
     text-decoration: none;
+  }
+  a:hover {
+    color: var(--brand-accent-dark);
   }
   a:focus-visible {
     outline: 2px solid hsl(45, 100%, 50%);
     outline-offset: 2px;
   }
+}
+/* HEADER Global Style */
+.header-main {
+  position: relative;
 }
