@@ -75,3 +75,51 @@
 .header-main {
   position: relative;
 }
+
+.header-main::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background: linear-gradient(
+    90deg, 
+    transparent, 
+    #10b981,  /* emerald-500 */
+    #059669,  /* emerald-600 */ 
+    #047857,  /* emerald-700 */
+    transparent
+  );
+  background-size: 200% 100%;
+  opacity: 0.4;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: gradientShift 4s ease-in-out infinite;
+}
+
+.header-main.scrolled::after {
+  opacity: 0.6;
+  transform: scaleX(1);
+}
+
+@keyframes gradientShift {
+  0%, 100% { 
+    background-position: -200% 0; 
+  }
+  50% { 
+    background-position: 200% 0; 
+  }
+}
+
+/* Smooth transitions for all header elements */
+/* .header-main * { */
+  /* transition-property: color, background-color, border-color, opacity, transform; */
+  /* transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
+  /* transition-duration: 300ms; */
+/* } */
+
+/* Prevent text glitch on CTA button */
+button {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
