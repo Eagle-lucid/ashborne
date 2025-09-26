@@ -32,7 +32,7 @@ export const SocialLinks: React.FC<SocialLinksProps> = ({ onItemClick }) => {
                     <a 
                       key={social.label}
                       href={social.href}
-                      traget='_blank'
+                      target='_blank'
                       rel='noopener noreferrer'
                       className='p-2'
                       aria-label={`Visit our {social.label}`}
