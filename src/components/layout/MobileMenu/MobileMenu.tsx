@@ -8,7 +8,7 @@ import {SocialLinks} from './SocialLinks';
 interface MobileMenuProps {
     isOpen: boolean;
     onClose: () => void;
-    navItems: Array<{ label: string; href: string }>;
+    navItems: readonly { label: string; href: string; }[];
     activeSection: string;
     onItemClick: (href: string) => void;
 }
@@ -45,6 +45,8 @@ export const MobileMenu: React.FC<MobileMenuProps>= ({
                         <button 
                            onClick={onClose}
                            className="p-2"
+                           type="button"
+                            aria-label='Close navigation menu'
                         >
                             <X size={24} />
                         </button>
