@@ -1,7 +1,7 @@
 // src/components/layout/Header.tsx
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu } from 'lucide-react';
 
 // Hooks 
 import { useScrollEffect } from '@/hooks/useScrollEffect';
@@ -36,8 +36,8 @@ export const  Header = () => {
           setIsMobileMenuOpen(false);
     }
 
-    const toggleMobileMenu = () => {
-        setIsMobileMenuOpen(!isMobileMenuOpen);
+    const openMobileMenu = () => {
+        setIsMobileMenuOpen(true);
     }
 
     return (
@@ -126,34 +126,12 @@ export const  Header = () => {
                       {/* Mobile Menu Button with smooth icon transition */}
                         <motion.button
                             className='md:hidden p-2 rounded-lg hover:bg-black/10 transition-colors duration-300 relative'
-                            onClick={toggleMobileMenu}
+                            onClick={openMobileMenu}
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.9 }}
-                            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+                            aria-label='Open navigation menu'
                         >
-                            <AnimatePresence mode='wait'>
-                                {isMobileMenuOpen ? (
-                                    <motion.div
-                                        key="close-icon"
-                                        initial={{ opacity: 0, rotate: -90 }}
-                                        animate={{ opacity: 1, rotate: 0 }}
-                                        exit={{ opacity: 0, rotate: 90 }}
-                                        transition={{ duration: 0.2 }}
-                                    >
-                                        <X size={24} className={isScrolled ? 'text-gray-600' : 'text-white'} />
-                                    </motion.div>
-                                ) : (
-                                    <motion.div
-                                        key="menu-icon"
-                                        initial={{ opacity: 0, rotate: 90 }}
-                                        animate={{ opacity: 1, rotate: 0 }}
-                                        exit={{ opacity: 0, rotate: -90 }}
-                                        transition={{ duration: 0.2 }}
-                                    >
-                                        <Menu size={24} className={isScrolled ? 'text-gray-600' : 'text-white'} />
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
+                        <Menu size={24} className={isScrolled ? 'text-gray-600' : 'text-white'} />
                         </motion.button>
                      
                   </div>
