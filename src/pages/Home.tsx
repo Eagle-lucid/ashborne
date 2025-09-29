@@ -4,7 +4,7 @@ import { Header } from '../components/layout/Header';
 // import { Container } from '../components/layout/Container';
 
 // Import all sections 
-// import { Hero } from '../sections/Hero';
+ import { Hero } from '@/sections/Hero';
 // import { About } from '../sections/About';
 // import { WhyChooseUs } from '../sections/WhyChooseUs';
 // import { Services } from '../sections/Services';
@@ -19,7 +19,7 @@ export const Home = () => {
 
             {/* <main> */}
               {/* Hero is full-bleed */}
-              {/* <Hero /> */}
+              <Hero />
             {/*  */}
               {/* Unified container for main narrative */}
               {/* <Container> */}
