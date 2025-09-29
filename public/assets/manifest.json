@@ -1,0 +1,35 @@
+{
+    "short_name": "Ashborne",
+    "name": "Ashborne Consulting - Strategy. Innovation. Growth.",
+    "description": "Modern business consulting agency specializing in digital transformation, growth strategy, and innovation.",
+    "icons": [
+        {
+            "src": "/ashborne-icon.svg",
+            "type": "image/svg+xml",
+            "sizes": "64x64",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/ashborne-icon-192.png",
+            "type": "image/png",
+            "sizes": "192x192",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/ashborne-icon-512.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "any maskable"
+        }
+    ],
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "hsl(145, 63%, 42%)",
+    "background_color": "hsl(0, 0%, 100%)",
+    "categories": [
+        "business",
+        "productivity"
+    ],
+    "lang": "en-US",
+    "orientation": "portrait-primary"
+}
